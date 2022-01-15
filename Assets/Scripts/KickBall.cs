@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class KickBall : MonoBehaviour
@@ -24,28 +23,27 @@ public class KickBall : MonoBehaviour
 
     void Update()
     {
-        if (!BallActivity.activity)
-        {
-            if (Input.GetMouseButton(0))
-            {
+        if (!BallActivity.isActive) {
+
+            if (Input.GetMouseButton(0)) {
                 _trajectory.enabled = true;
                 _cue.enabled = true;
                 _trajectory.ShowTrajectory();
-                try
-                {
+
+                try {
                     _cue.CuePossition();
+                } catch(Exception e) { 
+                    Console.WriteLine("{0} Exception caught.", e); 
                 }
-                catch { }
             }
-            if (Input.GetMouseButtonUp(0))
-            {
+            if (Input.GetMouseButtonUp(0)) {
                 _trajectory.enabled = false;
                 _cue.enabled = false;
                 Attack();
             }
         }
         else
-            BallActivity.activity = false;
+            BallActivity.isActive = false;
     }
 
 
@@ -59,7 +57,7 @@ public class KickBall : MonoBehaviour
 
 
         _mainBall.AddForce(speed, ForceMode2D.Force);
-        
+
     }
 
 

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Cue : MonoBehaviour
 {
@@ -13,14 +11,17 @@ public class Cue : MonoBehaviour
         mainCamera = Camera.main;
 
     }
+
     private void OnDisable()
     {
         gameObject.SetActive(false);
     }
+
     private void OnEnable()
     {
         gameObject.SetActive(true);
     }
+
     public void CuePossition()
     {
         gameObject.SetActive(true);

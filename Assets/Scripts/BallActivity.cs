@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BallActivity : MonoBehaviour
 {
-    public static bool activity;
+    public static bool isActive;
 
 
     protected Rigidbody2D _rg;
@@ -19,7 +17,7 @@ public class BallActivity : MonoBehaviour
     {
         if (_rg.velocity.x != 0 || _rg.velocity.y != 0)
         {
-            activity = true;
+            isActive = true;
         }
     }
 

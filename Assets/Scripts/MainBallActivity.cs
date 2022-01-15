@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MainBallActivity : BallActivity
 {
@@ -8,16 +6,16 @@ public class MainBallActivity : BallActivity
     [SerializeField]
     private AudioClip din;
     private new AudioSource audio;
+    private string _objectTag = "Ball";
     private void Start()
     {
 
-        _rg = GetComponent<Rigidbody2D>();
         audio = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ball")
+        if (collision.gameObject.tag == _objectTag)
             audio.PlayOneShot(din);
     }
 }

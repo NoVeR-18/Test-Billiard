@@ -71,7 +71,7 @@ public class TrajectoryRenderer : MonoBehaviour
         }
         Vector3 bouncePosition = new Vector3(endPosition.x + BounceTrajectory.x * 0.5f, endPosition.y + BounceTrajectory.y * 0.5f, -1);
         DirectionalLine.GetComponent<LineRenderer>().SetPosition(2, bouncePosition);
-        HitCircle.transform.position = endPosition- new Vector3(Direction.normalized.x , Direction.normalized.y)*0.1f;
+        HitCircle.transform.position = endPosition - new Vector3(Direction.normalized.x, Direction.normalized.y) * 0.1f;
 
     }
 }
